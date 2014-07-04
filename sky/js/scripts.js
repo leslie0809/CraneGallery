@@ -1,0 +1,11 @@
+(function($){Drupal.behaviors.skyAdminToggle={attach:function(context,settings){$('.collapsible-toggle a, context').click(function(){$('#section-collapsible').toggleClass('toggle-active').find('.region-collapsible').slideToggle('fast');return false;});}}
+Drupal.behaviors.skyPosts={attach:function(context,settings){if(!jQuery.support.leadingWhitespace){$('.article-content p:first-child').addClass('first-child');$('.article-content img, context').parent(':not(.field-item, .user-picture)').each(function(index){var stripe=(index/2)?'even':'odd';$(this).wrap('<div class="content-image-'+stripe+'"></div>');});}
+$("time span a").click(function(){prompt('Link to this comment:',this.href);return false;});}}})(jQuery);function MM_swapImgRestore(){var i,x,a=document.MM_sr;for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++)x.src=x.oSrc;}
+function MM_preloadImages(){var d=document;if(d.images){if(!d.MM_p)d.MM_p=new Array();var i,j=d.MM_p.length,a=MM_preloadImages.arguments;for(i=0;i<a.length;i++)
+if(a[i].indexOf("#")!=0){d.MM_p[j]=new Image;d.MM_p[j++].src=a[i];}}}
+function MM_findObj(n,d){var p,i,x;if(!d)d=document;if((p=n.indexOf("?"))>0&&parent.frames.length){d=parent.frames[n.substring(p+1)].document;n=n.substring(0,p);}
+if(!(x=d[n])&&d.all)x=d.all[n];for(i=0;!x&&i<d.forms.length;i++)x=d.forms[i][n];for(i=0;!x&&d.layers&&i<d.layers.length;i++)x=MM_findObj(n,d.layers[i].document);if(!x&&d.getElementById)x=d.getElementById(n);return x;}
+function MM_swapImage(){var i,j=0,x,a=MM_swapImage.arguments;document.MM_sr=new Array;for(i=0;i<(a.length-2);i+=3)
+if((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x;if(!x.oSrc)x.oSrc=x.src;x.src=a[i+2];}}
+var nowMenu={"id":null,"name":null,"img":null};function showIt(pic,opic,id,name){var div=document.getElementById(id);if(nowMenu.id!=null&&nowMenu.id!=id){document.getElementById(nowMenu["id"]).innerHTML="<img src="+nowMenu["img"]+" border=0 id="+nowMenu["name"]+">";}
+nowMenu["id"]=id;nowMenu["name"]=name;nowMenu["img"]="img/"+opic;div.innerHTML="<img src=img/"+pic+" border=0 id="+name+">";document.getElementById("ifm").src=document.getElementById(nowMenu["id"]).href;return false;}
